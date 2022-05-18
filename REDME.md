@@ -14,3 +14,4 @@ Aplico un poco lo aprendido de la API, al crear lineas.
 ## PROCESO DE MEJORAS DEL PROGRAMA
 
 1. Se agregra funcionalidad para poder cambiar de color
+2. se cambia la funcion de pintar con las flechas del teclado, ahora funciona con el mouse, pinta al estar sostenido, deja de pintar al no estar sosteniendo el mouse
