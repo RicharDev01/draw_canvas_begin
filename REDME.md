@@ -10,3 +10,7 @@ Aplico un poco lo aprendido de la API, al crear lineas.
 - CSS
 - JavaScript
 - API de HTML CANVAS
+
+## PROCESO DE MEJORAS DEL PROGRAMA
+
+1. Se agregra funcionalidad para poder cambiar de color
