@@ -1,16 +1,23 @@
 // declarando variables
-let pantallaCanvas = document.getElementById('pantalla_canvas')
+const pantallaCanvas = document.getElementById('pantalla_canvas')
 let lienzo = pantallaCanvas.getContext('2d')
-let color = 'green'
+const colorUsuario = document.getElementById('color-usuario')
+colorUsuario.value = '#008000'
+let colorPincel = colorUsuario.value
 let movimeintoPX = 10
 let x = 199, y = 199
-
 let teclas = {
   UP: 38,
   DOWN: 40,
   LEFT: 37,
   RIGHT: 39
 }
+
+function cambioColorPincel(){
+  colorPincel = colorUsuario.value
+}
+
+colorUsuario.addEventListener('change', cambioColorPincel)
 
 let dibujarLinea = function(color, xinicial, yinicial, xfinal, yfinal, lienzo){
 
@@ -29,26 +36,22 @@ let dibujarEnCanvas = function (evento) {
 
   switch (evento.keyCode) {
     case teclas.UP:
-      console.log("ARRIBA")
-      dibujarLinea(color, x, y, x, (y - movimeintoPX), lienzo)
+      dibujarLinea(colorPincel, x, y, x, (y - movimeintoPX), lienzo)
       y -= movimeintoPX
       break;
 
     case teclas.DOWN:
-      console.log("ABAJO")
-      dibujarLinea(color, x, y, x, (y + movimeintoPX), lienzo)
+      dibujarLinea(colorPincel, x, y, x, (y + movimeintoPX), lienzo)
       y += movimeintoPX
       break;
 
     case teclas.LEFT:
-      console.log("IZQUIERDA")
-      dibujarLinea(color, x, y, (x - movimeintoPX), y, lienzo)
+      dibujarLinea(colorPincel, x, y, (x - movimeintoPX), y, lienzo)
       x -= movimeintoPX
       break;
 
     case teclas.RIGHT:
-      console.log("DERECHA")
-      dibujarLinea(color, x, y, (x + movimeintoPX), y, lienzo)
+      dibujarLinea(colorPincel, x, y, (x + movimeintoPX), y, lienzo)
       x += movimeintoPX
       break;
 
